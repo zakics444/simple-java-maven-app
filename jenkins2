@@ -1,0 +1,18 @@
+pipline{
+    agent any
+    stages{
+        stage('cloning git repo'){
+            steps{
+                git 'https://github.com/zakics444/simple-java-maven-app.git'
+            }
+        }
+        stage('building'){
+            steps{
+                sh 'mvn clean package'
+            }
+        }
+        stage('release'){
+            archive 'target/*.jar'
+        }
+    }
+}
