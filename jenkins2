@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('cloning git repo'){
+        stage('cloning_git_repo'){
             steps{
                 git 'https://github.com/zakics444/simple-java-maven-app.git'
             }
